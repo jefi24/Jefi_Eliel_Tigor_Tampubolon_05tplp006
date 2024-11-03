@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Manajemen Karyawan</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="img/UNPAM_logo1.png" alt="University Logo">
+            <h2>Universitas Pamulang</h2>
+        </div>
+        <div class="welcome">
+            <img src="img/UNPAM_logo1.png" alt="Profile Picture">
+            <p>Welcome, Jefi Eliel Tigor Tampubolon<br><small>Administrator</small></p>
+        </div>
+        <a href="index.html" class="menu-item">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+        </a>
+        <div class="menu-heading">MENU KARYAWAN</div>
+        <a href="karyawan.html" class="menu-item">
+            <i class="fas fa-users"></i>
+            <span>Karyawan</span>
+        </a>
+        <a href="jabatan.html" class="menu-item">
+            <i class="fas fa-briefcase"></i>
+            <span>Jabatan</span>
+        </a>
+        <a href="divisi.html" class="menu-item">
+            <i class="fas fa-sitemap"></i>
+            <span>Divisi</span>
+        </a>
+
+        <div class="menu-heading">MENU ABSENSI</div>
+        <a href="absensi.html" class="menu-item">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Absensi</span>
+        </a>
+        <a href="izin.html" class="menu-item">
+            <i class="fas fa-file-alt"></i>
+            <span>Izin</span>
+        </a>
+        <a href="lembur.html" class="menu-item">
+            <i class="fas fa-clock"></i>
+            <span>Lembur</span>
+        </a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+            <h1>Sistem Informasi Manajemen Karyawan</h1>
+            <p>Admin Dashboard</p>
+        </div>
+
+        <!-- Add Employee Button -->
+         
+        <!-- Add Employee Button -->
+<a href="add_karyawan.html" class="btn-add">Tambah Karyawan</a>
+
+
+        <!-- Employee Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Kode</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>Alamat</th>
+                    <th>Jabatan</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>K001</td>
+                    <td>Jefi Eliel Tigor Tampubolon</td>
+                    <td>jefi@unpam.ac.id</td>
+                    <td>Jakarta, Indonesia</td>
+                    <td>Administrator</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-view"><i class="fas fa-eye"></i> Lihat</button>
+                            <button class="btn-edit"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn-delete"><i class="fas fa-trash"></i> Hapus</button>
+                            <button class="btn-pay"><i class="fas fa-money-bill"></i> Bayar</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>K002</td>
+                    <td>Marfel Crisly</td>
+                    <td>Marfel@unpam.ac.id</td>
+                    <td>Bandung, Indonesia</td>
+                    <td>Staff</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-view"><i class="fas fa-eye"></i> Lihat</button>
+                            <button class="btn-edit"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn-delete"><i class="fas fa-trash"></i> Hapus</button>
+                            <button class="btn-pay"><i class="fas fa-money-bill"></i> Bayar</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>K003</td>
+                    <td>Cello Eliezer</td>
+                    <td>cello@unpam.ac.id</td>
+                    <td>Tangerang, Indonesia</td>
+                    <td>HR</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-view"><i class="fas fa-eye"></i> Lihat</button>
+                            <button class="btn-edit"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn-delete"><i class="fas fa-trash"></i> Hapus</button>
+                            <button class="btn-pay"><i class="fas fa-money-bill"></i> Bayar</button>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

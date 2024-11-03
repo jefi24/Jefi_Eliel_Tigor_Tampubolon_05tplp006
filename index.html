@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Manajemen Karyawan</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            background-color: #f8f9fc;
+            color: #333;
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #0056d2;
+            color: #fff;
+            position: fixed;
+            height: 100vh;
+            padding: 10px 0;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            padding: 0 0;
+            font-size: 0.9em;
+        }
+
+        .sidebar .logo img {
+            width: 50%;
+            border-radius: 50%;
+            
+        }
+
+        .sidebar .welcome {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            margin-bottom: 20px;
+            padding: 0 0;
+        }
+
+        .sidebar .welcome img {
+            width: 30%;
+            height: 30%;
+            border-radius: 50%;
+        }
+
+        .sidebar .welcome p {
+            margin: 0;
+            font-size: 0.9em;
+            line-height: 1.2;
+            text-align: left;
+        }
+
+        .sidebar .welcome p small {
+            font-size: 0.75em;
+            color: #ddd;
+        }
+
+        .sidebar .menu-heading {
+            padding: 10px 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #ccc;
+        }
+
+        .sidebar .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .sidebar .menu-item.active, .sidebar .menu-item:hover {
+            background-color: #0044aa;
+            color: #fff;
+        }
+
+        .sidebar .menu-item i {
+            margin-right: 10px;
+        }
+
+        /* Content */
+        .content {
+            margin-left: 250px;
+            padding: 15px 20px;
+            flex: 1;
+        }
+
+        .dashboard-header {
+            background-color: #0056d2;
+            color: #fff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        /* Cards */
+        .cards {
+            display: flex;
+            gap: 15px;
+        }
+
+        .card {
+            flex: 1;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card .icon {
+            font-size: 2em;
+            padding: 10px;
+            border-radius: 8px;
+            color: #fff;
+        }
+
+        .card h3 {
+            font-size: 1em;
+            color: #333;
+            margin: 0;
+        }
+
+        .card .count {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+        .menu-item {
+            text-decoration: none; /* Remove underline */
+            display: flex; /* Optional: makes icon and text align */
+            align-items: center; /* Optional: centers items vertically */
+            padding: 10px; /* Optional: add some padding */
+        }
+    
+        .menu-item i {
+            margin-right: 8px; /* Optional: space between icon and text */
+        }
+    
+        .menu-item:hover {
+            background-color: #f0f0f0; /* Optional: add hover effect */
+        }
+
+        /* Icon Colors */
+        .icon-blue { background-color: #1E90FF; }
+        .icon-green { background-color: #28a745; }
+        .icon-dark-blue { background-color: #007bff; }
+        .icon-purple { background-color: #6f42c1; }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="img/UNPAM_logo1.png" alt="University Logo">
+            <h2>Universitas Pamulang</h2>
+        </div>
+        <div class="welcome">
+            <img src="img/UNPAM_logo1.png" alt="Profile Picture">
+            <p>Welcome, Jefi Eliel Tigor Tampubolon<br><small>Administrator</small></p>
+        </div>
+        <a href="index.html" class="menu-item">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+        </a>
+        <div class="menu-heading">MENU KARYAWAN</div>
+<a href="karyawan.html" class="menu-item">
+    <i class="fas fa-users"></i>
+    <span>Karyawan</span>
+</a>
+<a href="jabatan.html" class="menu-item">
+    <i class="fas fa-briefcase"></i>
+    <span>Jabatan</span>
+</a>
+<a href="divisi.html" class="menu-item">
+    <i class="fas fa-sitemap"></i>
+    <span>Divisi</span>
+</a>
+
+<div class="menu-heading">MENU ABSENSI</div>
+<a href="absensi.html" class="menu-item">
+    <i class="fas fa-calendar-alt"></i>
+    <span>Absensi</span>
+</a>
+<a href="izin.html" class="menu-item">
+    <i class="fas fa-file-alt"></i>
+    <span>Izin</span>
+</a>
+<a href="lembur.html" class="menu-item">
+    <i class="fas fa-clock"></i>
+    <span>Lembur</span>
+</a>
+
+        
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+            <h1>Sistem Informasi Manajemen Karyawan</h1>
+            <p>Admin Dashboard</p>
+        </div>
+
+        <!-- Cards -->
+        <div class="cards">
+            <div class="card">
+                <div class="icon icon-blue"><i class="fas fa-user-friends"></i></div>
+                <div>
+                    <h3>Data Pegawai</h3>
+                    <div class="count">13</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon icon-green"><i class="fas fa-calendar-check"></i></div>
+                <div>
+                    <h3>Absensi Hari Ini</h3>
+                    <small>11 November 2024</small>
+                    <div class="count">0</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon icon-dark-blue"><i class="fas fa-check-circle"></i></div>
+                <div>
+                    <h3>Izin Menunggu Konfirmasi</h3>
+                    <div class="count">2</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon icon-purple"><i class="fas fa-check-circle"></i></div>
+                <div>
+                    <h3>Lembur Menunggu Konfirmasi</h3>
+                    <div class="count">1</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Manajemen Lembur</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+            padding-top: 60px; 
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            max-width: 500px;
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-change-status {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .btn-change-status:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="img/UNPAM_logo1.png" alt="University Logo">
+            <h2>Universitas Pamulang</h2>
+        </div>
+        <div class="welcome">
+            <img src="img/UNPAM_logo1.png" alt="Profile Picture">
+            <p>Welcome, Jefi Eliel Tigor Tampubolon<br><small>Administrator</small></p>
+        </div>
+        <a href="index.html" class="menu-item">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+        </a>
+        <div class="menu-heading">MENU KARYAWAN</div>
+        <a href="karyawan.html" class="menu-item">
+            <i class="fas fa-users"></i>
+            <span>Karyawan</span>
+        </a>
+        <a href="jabatan.html" class="menu-item">
+            <i class="fas fa-briefcase"></i>
+            <span>Jabatan</span>
+        </a>
+        <a href="divisi.html" class="menu-item">
+            <i class="fas fa-sitemap"></i>
+            <span>Divisi</span>
+        </a>
+
+        <div class="menu-heading">MENU ABSENSI</div>
+        <a href="absensi.html" class="menu-item">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Absensi</span>
+        </a>
+        <a href="izin.html" class="menu-item">
+            <i class="fas fa-file-alt"></i>
+            <span>Izin</span>
+        </a>
+        <a href="lembur.html" class="menu-item active">
+            <i class="fas fa-clock"></i>
+            <span>Lembur</span>
+        </a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+            <h1>Sistem Informasi Manajemen Lembur</h1>
+            <p>Admin Dashboard</p>
+        </div>
+
+        <!-- Change Status Button -->
+        <button class="btn-change-status" id="openModal">Ubah Status Lembur</button>
+
+        <!-- Overtime Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Tanggal</th>
+                    <th>Jam Lembur Mulai</th>
+                    <th>Jam Lembur Berakhir</th>
+                    <th>Keperluan Lembur</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Jefi Tigor</td>
+                    <td>2024-11-01</td>
+                    <td>17:00</td>
+                    <td>20:00</td>
+                    <td>Proyek Khusus</td>
+                    <td>Disetujui</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Marfel Crisly</td>
+                    <td>2024-11-02</td>
+                    <td>18:00</td>
+                    <td>22:00</td>
+                    <td>Persiapan Event</td>
+                    <td>Menunggu</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Cello Eliezer</td>
+                    <td>2024-11-01</td>
+                    <td>19:00</td>
+                    <td>23:00</td>
+                    <td>Penyelesaian Laporan</td>
+                    <td>Ditolak</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal for Changing Status -->
+    <div id="statusModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Ubah Status Lembur</h2>
+            <form>
+                <label for="employeeName">Nama Karyawan:</label>
+                <input type="text" id="employeeName" name="employeeName" required><br><br>
+
+                <label for="overtimeDate">Tanggal:</label>
+                <input type="date" id="overtimeDate" name="overtimeDate" required><br><br>
+
+                <label for="newStatus">Status Baru:</label>
+                <select id="newStatus" name="newStatus">
+                    <option value="disetujui">Disetujui</option>
+                    <option value="ditolak">Ditolak</option>
+                    <option value="menunggu">Menunggu</option>
+                </select><br><br>
+
+                <button type="submit" class="btn-change-status">Simpan</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        var modal = document.getElementById("statusModal");
+        var btn = document.getElementById("openModal");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

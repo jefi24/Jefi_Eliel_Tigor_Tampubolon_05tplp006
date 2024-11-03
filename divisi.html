@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Manajemen Divisi</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="img/UNPAM_logo1.png" alt="University Logo">
+            <h2>Universitas Pamulang</h2>
+        </div>
+        <div class="welcome">
+            <img src="img/UNPAM_logo1.png" alt="Profile Picture">
+            <p>Welcome, Jefi Eliel Tigor Tampubolon<br><small>Administrator</small></p>
+        </div>
+        <a href="index.html" class="menu-item">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+        </a>
+        <div class="menu-heading">MENU KARYAWAN</div>
+        <a href="karyawan.html" class="menu-item">
+            <i class="fas fa-users"></i>
+            <span>Karyawan</span>
+        </a>
+        <a href="jabatan.html" class="menu-item">
+            <i class="fas fa-briefcase"></i>
+            <span>Jabatan</span>
+        </a>
+        <a href="divisi.html" class="menu-item active">
+            <i class="fas fa-sitemap"></i>
+            <span>Divisi</span>
+        </a>
+
+        <div class="menu-heading">MENU ABSENSI</div>
+        <a href="absensi.html" class="menu-item">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Absensi</span>
+        </a>
+        <a href="izin.html" class="menu-item">
+            <i class="fas fa-file-alt"></i>
+            <span>Izin</span>
+        </a>
+        <a href="lembur.html" class="menu-item">
+            <i class="fas fa-clock"></i>
+            <span>Lembur</span>
+        </a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+            <h1>Sistem Informasi Manajemen Divisi</h1>
+            <p>Admin Dashboard</p>
+        </div>
+
+        <!-- Add Division Button -->
+        <a href="add_divisi.html" class="btn-add">Tambah Divisi</a>
+
+        <!-- Division Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Kode Divisi</th>
+                    <th>Nama Divisi</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>D001</td>
+                    <td>Keuangan</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-edit"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn-delete"><i class="fas fa-trash"></i> Hapus</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>D002</td>
+                    <td>SDM</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-edit"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn-delete"><i class="fas fa-trash"></i> Hapus</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>D003</td>
+                    <td>Pemasaran</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-edit"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn-delete"><i class="fas fa-trash"></i> Hapus</button>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
